@@ -1,5 +1,5 @@
 package com.api.processing;
 
-public class APIActionParameters {
+public final class APIActionParameters {
 
 }
