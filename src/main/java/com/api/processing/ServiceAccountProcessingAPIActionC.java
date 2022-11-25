@@ -1,9 +1,10 @@
 package com.api.processing;
 
+import com.example.demo.APIActionName;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OldAPIActionA implements APIAction {
+public class ServiceAccountProcessingAPIActionC implements APIAction {
 
   @Override
   public String execute(APIActionParameters apiActionParameters) {
@@ -12,6 +13,11 @@ public class OldAPIActionA implements APIAction {
 
   @Override
   public APIActionName getActionName() {
-    return APIActionName.OLD_API_ACTION_A;
+    return APIActionName.SERVICE_ACCOUNT_PROCESSING_API_ACTION_C;
+  }
+
+  @Override
+  public String toString() {
+    return this.getClass().getName();
   }
 }

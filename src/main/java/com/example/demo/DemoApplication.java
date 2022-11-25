@@ -17,6 +17,10 @@ public class DemoApplication implements CommandLineRunner {
 	@Autowired
 	ProcessingAPIService processingAPIService;
 
+	@Autowired
+	TransactionAPIService transactionAPIService;
+
+
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
@@ -25,6 +29,8 @@ public class DemoApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		//someService.findSome();
 		processingAPIService.getApiAction();
+		transactionAPIService.getApiAction();
+
 
 	}
 }

@@ -1,12 +1,12 @@
 package com.api.transaction;
 
-import com.api.processing.APIActionName;
-import com.api.processing.APIActionParameters;
 import com.api.processing.APIAction;
+import com.api.processing.APIActionParameters;
+import com.example.demo.APIActionName;
 import org.springframework.stereotype.Component;
 
 @Component
-public class NewAPITransactionActionA implements APIAction {
+public class ServiceAccountTransactionAPIActionB implements APIAction {
 
   @Override
   public String execute(APIActionParameters apiActionParameters) {
@@ -15,6 +15,11 @@ public class NewAPITransactionActionA implements APIAction {
 
   @Override
   public APIActionName getActionName() {
-    return APIActionName.NEW_API_ACTION_A;
+    return APIActionName.SERVICE_ACCOUNT_TRANSACTION_API_ACTION_B;
+  }
+
+  @Override
+  public String toString() {
+    return this.getClass().getName();
   }
 }

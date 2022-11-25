@@ -1,29 +1,32 @@
 package com.api.transaction;
 
 import com.api.processing.APIAction;
-import com.api.processing.APIActionName;
+import com.example.demo.APIActionName;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TransactionAPIActionFactory {
+  private final String accountType;
   private Map<APIActionName, APIAction> transactionAPIActionMap;
-
-
   @Autowired
-  public TransactionAPIActionFactory(Set<APIAction> transactionAPIActionSet) {
-    System.out.println("Auto wiring Set = " + transactionAPIActionSet.size());
-    setUpAPIActions(transactionAPIActionSet);
+  public TransactionAPIActionFactory(Set<APIAction> transactionAPIActionSet,@Value("${account_type}") String accountType) {
+    System.out.println("Auto wiring Set TransactionAPIActionFactory = " + transactionAPIActionSet.size());
+    this.accountType = accountType;
+    setUpAPIActions(transactionAPIActionSet,accountType);
   }
 
-  public APIAction findAPIAction(APIActionName apiActionName) {
-    return transactionAPIActionMap.get(apiActionName);
+  public APIAction findAPIAction(String apiActionName) {
+
+    return transactionAPIActionMap.get(APIActionName.valueOf(accountType + "_" +apiActionName));
   }
-  private void setUpAPIActions(Set<APIAction> transactionAPIActionSet) {
+  private void setUpAPIActions(Set<APIAction> transactionAPIActionSet,String accountType) {
     transactionAPIActionMap = new HashMap<APIActionName, APIAction>();
+    transactionAPIActionSet.removeIf(e-> !e.getActionName().name().contains(accountType));
     transactionAPIActionSet.forEach(
         apiAction -> transactionAPIActionMap.put(apiAction.getActionName(),apiAction));
   }
