@@ -1,9 +1,13 @@
-package com.api.processing;
+package com.api.transaction;
 
+import com.api.processing.APIActionName;
+import com.api.processing.APIActionParameters;
+import com.api.processing.APIAction;
 import org.springframework.stereotype.Component;
 
 @Component
-public class NewAPIActionA implements APIAction {
+public class NewAPITransactionActionA implements APIAction {
+
   @Override
   public String execute(APIActionParameters apiActionParameters) {
     return this.getClass().getName();

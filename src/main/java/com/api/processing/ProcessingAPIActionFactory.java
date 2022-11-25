@@ -8,20 +8,20 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ProcessingAPIActionFactory {
-  private Map<APIActionName, ProcessingAPIAction> processingAPIActionMap;
+  private Map<APIActionName, APIAction> processingAPIActionMap;
 
 
   @Autowired
-  public ProcessingAPIActionFactory(Set<ProcessingAPIAction> processingAPIActionSet) {
+  public ProcessingAPIActionFactory(Set<APIAction> processingAPIActionSet) {
     System.out.println("Auto wiring Set = " + processingAPIActionSet.size());
     setUpAPIActions(processingAPIActionSet);
   }
 
-  public ProcessingAPIAction findAPIAction(APIActionName apiActionName) {
+  public APIAction findAPIAction(APIActionName apiActionName) {
     return processingAPIActionMap.get(apiActionName);
   }
-  private void setUpAPIActions(Set<ProcessingAPIAction> processingAPIActionSet) {
-    processingAPIActionMap = new HashMap<APIActionName, ProcessingAPIAction>();
+  private void setUpAPIActions(Set<APIAction> processingAPIActionSet) {
+    processingAPIActionMap = new HashMap<APIActionName, APIAction>();
     processingAPIActionSet.forEach(
         apiAction ->processingAPIActionMap.put(apiAction.getActionName(),apiAction));
   }

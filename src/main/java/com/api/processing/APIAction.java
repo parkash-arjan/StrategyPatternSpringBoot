@@ -1,6 +1,6 @@
 package com.api.processing;
 
-public interface ProcessingAPIAction {
+public interface APIAction {
 
 
   String execute(APIActionParameters apiActionParameters);

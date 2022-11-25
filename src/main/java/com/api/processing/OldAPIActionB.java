@@ -3,7 +3,7 @@ package com.api.processing;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OldAPIActionB implements  ProcessingAPIAction{
+public class OldAPIActionB implements APIAction {
 
   @Override
   public String execute(APIActionParameters apiActionParameters) {
