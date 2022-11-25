@@ -1,7 +1,7 @@
 package com.api.processing;
 
 import com.example.demo.APIActionName;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class ProcessingAPIActionFactory {
     return processingAPIActionMap.get(APIActionName.valueOf(accountType + "_" +apiActionName));
   }
   private void setUpAPIActions(Set<APIAction> processingAPIActionSet ) {
-    processingAPIActionMap = new HashMap<APIActionName, APIAction>();
+    processingAPIActionMap = new EnumMap<>(APIActionName.class);
     processingAPIActionSet.removeIf(e-> !e.getActionName().name().contains(accountType));
     processingAPIActionSet.forEach(
         apiAction ->processingAPIActionMap.put(apiAction.getActionName(),apiAction));

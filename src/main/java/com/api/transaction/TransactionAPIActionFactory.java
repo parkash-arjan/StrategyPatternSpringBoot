@@ -2,6 +2,7 @@ package com.api.transaction;
 
 import com.api.processing.APIAction;
 import com.example.demo.APIActionName;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -25,7 +26,7 @@ public class TransactionAPIActionFactory {
     return transactionAPIActionMap.get(APIActionName.valueOf(accountType + "_" +apiActionName));
   }
   private void setUpAPIActions(Set<APIAction> transactionAPIActionSet,String accountType) {
-    transactionAPIActionMap = new HashMap<APIActionName, APIAction>();
+    transactionAPIActionMap = new EnumMap<>(APIActionName.class);
     transactionAPIActionSet.removeIf(e-> !e.getActionName().name().contains(accountType));
     transactionAPIActionSet.forEach(
         apiAction -> transactionAPIActionMap.put(apiAction.getActionName(),apiAction));

@@ -15,7 +15,7 @@ public class TransactionAPIService{
   private String accountType;
 
   public void getApiAction(){
-    APIAction transactionAPIAction = transactionAPIActionFactory.findAPIAction("TRANSACTION_API_ACTION_B");
+    APIAction transactionAPIAction = transactionAPIActionFactory.findAPIAction("TRANSACTION_API_ACTION_C");
     String actionOutput = transactionAPIAction.execute(new APIActionParameters());
     System.out.println(actionOutput);
   }
