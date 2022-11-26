@@ -17,7 +17,7 @@ public class APIActionFactory{
     System.out.println("Auto wiring Set APIActionFactory = " + apiActionSet.size());
     setUpAPIActions(apiActionSet,accountType);
   }
-  public APIAction findAPIAction(String apiActionName){
+  public APIAction findAPIActionByName(String apiActionName){
     return apiActionMap.get(apiActionName);
   }
   private void setUpAPIActions(Set<APIAction> apiActionSet,String accountType){
