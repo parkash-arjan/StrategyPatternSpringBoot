@@ -1,14 +1,14 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Component
 public class StrategyFactory {
+
   private Map<StrategyName, Strategy> strategies;
 
   @Autowired
@@ -21,9 +21,10 @@ public class StrategyFactory {
 
     return strategies.get(strategyName);
   }
+
   private void createStrategy(Set<Strategy> strategySet) {
     strategies = new HashMap<StrategyName, Strategy>();
     strategySet.forEach(
-        strategy ->strategies.put(strategy.getStrategyName(), strategy));
+        strategy -> strategies.put(strategy.getStrategyName(), strategy));
   }
 }

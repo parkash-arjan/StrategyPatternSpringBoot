@@ -5,9 +5,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SomeService {
+
   @Autowired
   private StrategyFactory strategyFactory;
-  public void findSome(){
+
+  public void findSome() {
 
     // Now get the strategy by passing the name
     Strategy strategy =

@@ -9,7 +9,7 @@ import com.example.demo.APIActionName;
 import org.springframework.stereotype.Component;
 
 @Component
-@APIActionEntity(name = "APIActionC" , accountType =  ActionAssociation.USER_ACCOUNT , apiType = APIType.TRANSACTION)
+@APIActionEntity(name = "APIActionC", accountType = ActionAssociation.USER_ACCOUNT, apiType = APIType.TRANSACTION)
 public class UserAccountTransactionAPIActionC implements APIAction {
 
   @Override

@@ -10,7 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com")
 public class DemoApplication implements CommandLineRunner {
 
-
 //	@Autowired
 //	SomeService someService;
 //
@@ -20,18 +19,19 @@ public class DemoApplication implements CommandLineRunner {
 //	@Autowired
 //	TransactionAPIService transactionAPIService;
 
-	@Autowired
-	APIService apiService;
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
+  @Autowired
+  APIService apiService;
 
-	@Override
-	public void run(String... args) throws Exception {
-		//someService.findSome();
-		//processingAPIService.getApiAction();
-		//transactionAPIService.getApiAction();
-		apiService.getApiAction();
+  public static void main(String[] args) {
+    SpringApplication.run(DemoApplication.class, args);
+  }
 
-	}
+  @Override
+  public void run(String... args) throws Exception {
+    //someService.findSome();
+    //processingAPIService.getApiAction();
+    //transactionAPIService.getApiAction();
+    apiService.getApiAction();
+
+  }
 }

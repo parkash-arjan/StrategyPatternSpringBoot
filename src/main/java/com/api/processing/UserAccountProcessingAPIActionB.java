@@ -7,7 +7,7 @@ import com.example.demo.APIActionName;
 import org.springframework.stereotype.Component;
 
 @Component
-@APIActionEntity(name = "APIActionB" , accountType =  ActionAssociation.USER_ACCOUNT , apiType = APIType.PROCESSING)
+@APIActionEntity(name = "APIActionB", accountType = ActionAssociation.USER_ACCOUNT, apiType = APIType.PROCESSING)
 public class UserAccountProcessingAPIActionB implements APIAction {
 
   @Override

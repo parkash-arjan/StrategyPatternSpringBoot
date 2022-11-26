@@ -1,7 +1,18 @@
 package com.example.demo;
 
-import com.api.processing.*;
-import com.api.transaction.*;
+import com.api.processing.APIAction;
+import com.api.processing.ServiceAccountProcessingAPIActionA;
+import com.api.processing.ServiceAccountProcessingAPIActionB;
+import com.api.processing.ServiceAccountProcessingAPIActionC;
+import com.api.processing.UserAccountProcessingAPIActionA;
+import com.api.processing.UserAccountProcessingAPIActionB;
+import com.api.processing.UserAccountProcessingAPIActionC;
+import com.api.transaction.ServiceAccountTransactionAPIActionA;
+import com.api.transaction.ServiceAccountTransactionAPIActionB;
+import com.api.transaction.ServiceAccountTransactionAPIActionC;
+import com.api.transaction.UserAccountTransactionAPIActionA;
+import com.api.transaction.UserAccountTransactionAPIActionB;
+import com.api.transaction.UserAccountTransactionAPIActionC;
 
 public enum APIActionNameClass {
 
@@ -24,8 +35,9 @@ public enum APIActionNameClass {
   USER_ACCOUNT_TRANSACTION_API_ACTION_C(UserAccountTransactionAPIActionC.class);
 
   private final Class<? extends APIAction> apiAction;
-  APIActionNameClass(Class<? extends APIAction> apiActionClass){
-    this.apiAction=apiActionClass;
+
+  APIActionNameClass(Class<? extends APIAction> apiActionClass) {
+    this.apiAction = apiActionClass;
   }
 }
 

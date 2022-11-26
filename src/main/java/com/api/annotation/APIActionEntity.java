@@ -8,7 +8,10 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface APIActionEntity {
+
   String name();
-  ActionAssociation[] accountType() default  ActionAssociation.USER_ACCOUNT;
+
+  ActionAssociation[] accountType() default ActionAssociation.USER_ACCOUNT;
+
   APIType[] apiType();
 }

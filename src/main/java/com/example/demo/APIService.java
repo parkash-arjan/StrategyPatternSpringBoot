@@ -7,10 +7,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class APIService {
+
   @Autowired
   APIActionFactory apiActionFactory;
 
-  public void getApiAction(){
+  public void getApiAction() {
     APIAction apiAction = apiActionFactory.findAPIActionByName("APIActionA");
     String actionOutput = apiAction.execute(new APIActionParameters());
     System.out.println(actionOutput);

@@ -14,8 +14,10 @@ public class ProcessingAPIService {
   private String accountType;
   @Autowired
   ProcessingAPIActionFactory processingAPIActionFactory;
-  public void getApiAction(){
-    APIAction processingAPIAction = processingAPIActionFactory.findAPIAction("PROCESSING_API_ACTION_B");
+
+  public void getApiAction() {
+    APIAction processingAPIAction = processingAPIActionFactory.findAPIAction(
+        "PROCESSING_API_ACTION_B");
     String actionOutput = processingAPIAction.execute(new APIActionParameters());
     System.out.println(actionOutput);
   }
