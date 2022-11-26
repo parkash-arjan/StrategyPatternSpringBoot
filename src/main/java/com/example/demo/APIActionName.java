@@ -1,10 +1,5 @@
 package com.example.demo;
 
-import com.api.processing.APIAction;
-import com.api.processing.APIActionParameters;
-import com.api.processing.ServiceAccountProcessingAPIActionA;
-import com.api.processing.UserAccountProcessingAPIActionA;
-
 public enum APIActionName {
   SERVICE_ACCOUNT_PROCESSING_API_ACTION_A,
   USER_ACCOUNT_PROCESSING_API_ACTION_A,

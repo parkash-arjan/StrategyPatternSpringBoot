@@ -1,7 +1,7 @@
 package com.api.processing;
 
-import com.api.annotation.APIType;
 import com.api.annotation.APIActionEntity;
+import com.api.annotation.APIType;
 import com.api.annotation.ActionAssociation;
 import com.example.demo.APIActionName;
 import org.springframework.stereotype.Component;
