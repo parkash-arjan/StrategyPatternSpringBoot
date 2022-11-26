@@ -1,11 +1,15 @@
 package com.api.transaction;
 
+import com.api.annotation.APIType;
+import com.api.annotation.Action;
+import com.api.annotation.ActionAssociation;
 import com.api.processing.APIAction;
 import com.api.processing.APIActionParameters;
 import com.example.demo.APIActionName;
 import org.springframework.stereotype.Component;
 
 @Component
+@Action(name = "APIActionB" , accountType =  ActionAssociation.SERVICE_ACCOUNT , apiType = APIType.TRANSACTION)
 public class ServiceAccountTransactionAPIActionB implements APIAction {
 
   @Override

@@ -11,16 +11,17 @@ import org.springframework.context.annotation.ComponentScan;
 public class DemoApplication implements CommandLineRunner {
 
 
-	@Autowired
-	SomeService someService;
+//	@Autowired
+//	SomeService someService;
+//
+//	@Autowired
+//	ProcessingAPIService processingAPIService;
+//
+//	@Autowired
+//	TransactionAPIService transactionAPIService;
 
 	@Autowired
-	ProcessingAPIService processingAPIService;
-
-	@Autowired
-	TransactionAPIService transactionAPIService;
-
-
+	APIService apiService;
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
@@ -28,9 +29,9 @@ public class DemoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		//someService.findSome();
-		processingAPIService.getApiAction();
-		transactionAPIService.getApiAction();
-
+		//processingAPIService.getApiAction();
+		//transactionAPIService.getApiAction();
+		apiService.getApiAction();
 
 	}
 }
