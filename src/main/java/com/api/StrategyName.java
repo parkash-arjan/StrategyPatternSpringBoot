@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.api;
 
 public enum StrategyName {
   STRATEGY_A,

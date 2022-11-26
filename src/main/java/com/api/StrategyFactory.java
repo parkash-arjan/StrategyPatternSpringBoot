@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.api;
 
 import java.util.EnumMap;
 import java.util.Map;

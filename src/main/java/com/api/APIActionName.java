@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.api;
 
 public enum APIActionName {
   SERVICE_ACCOUNT_PROCESSING_API_ACTION_A,

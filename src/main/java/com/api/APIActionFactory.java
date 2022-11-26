@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.api;
 
 import com.api.annotation.APIActionEntity;
 import com.api.processing.APIAction;

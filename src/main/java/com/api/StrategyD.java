@@ -1,11 +1,11 @@
-package com.example.demo;
+package com.api;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-public class StrategyC implements Strategy {
+public class StrategyD implements Strategy {
 
   @Override
   public void doStuff() {

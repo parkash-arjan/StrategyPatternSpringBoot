@@ -1,6 +1,6 @@
 package com.api.processing;
 
-import com.example.demo.APIActionName;
+import com.api.APIActionName;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Set;

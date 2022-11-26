@@ -1,11 +1,11 @@
 package com.api.transaction;
 
+import com.api.APIActionName;
 import com.api.annotation.APIActionEntity;
 import com.api.annotation.APIType;
 import com.api.annotation.ActionAssociation;
 import com.api.processing.APIAction;
 import com.api.processing.APIActionParameters;
-import com.example.demo.APIActionName;
 import org.springframework.stereotype.Component;
 
 @Component

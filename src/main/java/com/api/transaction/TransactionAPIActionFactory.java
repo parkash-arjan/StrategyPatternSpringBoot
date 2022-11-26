@@ -1,7 +1,7 @@
 package com.api.transaction;
 
+import com.api.APIActionName;
 import com.api.processing.APIAction;
-import com.example.demo.APIActionName;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Set;
