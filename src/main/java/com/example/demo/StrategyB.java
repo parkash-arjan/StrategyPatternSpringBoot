@@ -1,17 +1,19 @@
 package com.example.demo;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class StrategyB implements Strategy {
 
   @Override
   public void doStuff() {
-    System.out.println("Doing stuff in B...");
+    log.info("Doing stuff in B...");
   }
 
   @Override
   public StrategyName getStrategyName() {
-    return StrategyName.StrategyB;
+    return StrategyName.STRATEGY_B;
   }
 }

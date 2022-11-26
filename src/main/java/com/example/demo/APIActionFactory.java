@@ -5,11 +5,13 @@ import com.api.processing.APIAction;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class APIActionFactory {
 
   private Map<String, APIAction> apiActionMap;
@@ -17,7 +19,7 @@ public class APIActionFactory {
   @Autowired
   public APIActionFactory(Set<APIAction> apiActionSet,
       @Value("${account_type}") String accountType) {
-    System.out.println("Auto wiring Set APIActionFactory = " + apiActionSet.size());
+    log.info("Auto wiring Set APIActionFactory {} ", apiActionSet.size());
     setUpAPIActions(apiActionSet, accountType);
   }
 

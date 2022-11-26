@@ -5,11 +5,13 @@ import com.example.demo.APIActionName;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Set;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class TransactionAPIActionFactory {
 
   private final String accountType;
@@ -18,8 +20,8 @@ public class TransactionAPIActionFactory {
   @Autowired
   public TransactionAPIActionFactory(Set<APIAction> transactionAPIActionSet,
       @Value("${account_type}") String accountType) {
-    System.out.println(
-        "Auto wiring Set TransactionAPIActionFactory = " + transactionAPIActionSet.size());
+    log.info(
+        "Auto wiring Set TransactionAPIActionFactory = {}", transactionAPIActionSet.size());
     this.accountType = accountType;
     setUpAPIActions(transactionAPIActionSet, accountType);
   }

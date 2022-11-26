@@ -1,7 +1,7 @@
 package com.example.demo;
 
 public enum StrategyName {
-  StrategyA,
-  StrategyB,
-  StrategyC
+  STRATEGY_A,
+  STRATEGY_B,
+  STRATEGY_C
 }

@@ -13,7 +13,7 @@ public class SomeService {
 
     // Now get the strategy by passing the name
     Strategy strategy =
-        strategyFactory.findStrategy(StrategyName.StrategyA);
+        strategyFactory.findStrategy(StrategyName.STRATEGY_A);
     // you can now call the methods defined in strategy.
     strategy.doStuff();
   }
