@@ -1,13 +1,13 @@
 package com.api.processing;
 
 import com.api.annotation.APIType;
-import com.api.annotation.Action;
+import com.api.annotation.APIActionEntity;
 import com.api.annotation.ActionAssociation;
 import com.example.demo.APIActionName;
 import org.springframework.stereotype.Component;
 
 @Component
-@Action(name = "APIActionB" , accountType =  ActionAssociation.USER_ACCOUNT , apiType = APIType.PROCESSING)
+@APIActionEntity(name = "APIActionB" , accountType =  ActionAssociation.USER_ACCOUNT , apiType = APIType.PROCESSING)
 public class UserAccountProcessingAPIActionB implements APIAction {
 
   @Override

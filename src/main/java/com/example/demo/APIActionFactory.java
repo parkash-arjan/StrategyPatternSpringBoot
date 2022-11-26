@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.api.annotation.Action;
+import com.api.annotation.APIActionEntity;
 import com.api.processing.APIAction;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,9 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class APIActionFactory{
-
-  private Map<String , APIAction> apiActionMap;
-
+  private Map<String,APIAction> apiActionMap;
   @Autowired
   public APIActionFactory(Set<APIAction> apiActionSet,@Value("${account_type}") String accountType){
     System.out.println("Auto wiring Set APIActionFactory = " + apiActionSet.size());
@@ -26,9 +24,9 @@ public class APIActionFactory{
     apiActionMap = new HashMap<>();
     apiActionSet.forEach(
         apiAction -> {
-          Action actionAnnotation = apiAction.getClass().getAnnotation(Action.class);
+          APIActionEntity actionAnnotation = apiAction.getClass().getAnnotation(APIActionEntity.class);
           if(accountType.equalsIgnoreCase(actionAnnotation.accountType()[0].name())){
-            apiActionMap.put( actionAnnotation.name() , apiAction);
+            apiActionMap.put(actionAnnotation.name(),apiAction);
           }
         });
   }
